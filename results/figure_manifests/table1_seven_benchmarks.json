@@ -1,0 +1,22 @@
+{
+ "inputs": [
+  "results/normalized/benchmarks.csv"
+ ],
+ "missing_rows": [
+  "50M/transformer",
+  "100M/transformer",
+  "400M/gdlm",
+  "400M/wang",
+  "400M/transformer",
+  "1.2B/gdlm",
+  "1.2B/wang",
+  "1.2B/transformer"
+ ],
+ "runs": [
+  "100M_gdlm_lr6e-4_s0",
+  "100M_wang_lr6e-4_s0",
+  "50M_gdlm_lr1e-3_s0",
+  "50M_wang_lr1e-3_s0"
+ ],
+ "rendered": "Fri Oct 23 12:48:14 2026"
+}

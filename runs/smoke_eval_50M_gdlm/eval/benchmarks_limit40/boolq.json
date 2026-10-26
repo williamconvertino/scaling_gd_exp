@@ -1,0 +1,32 @@
+{
+ "task": "boolq",
+ "display": "BoolQ",
+ "metric": "acc",
+ "value": 0.225,
+ "stderr": 0.06686668711812965,
+ "n_samples": {
+  "original": 3270,
+  "effective": 40
+ },
+ "version": 2.0,
+ "harness_version": "0.4.9",
+ "checkpoint": "ckpt_smoke.pt",
+ "checkpoint_tokens": 0,
+ "bos_prepended": true,
+ "num_fewshot": 0,
+ "limit": 40,
+ "seconds": 102.40534329414368,
+ "config": {
+  "dataset_path": "super_glue",
+  "dataset_name": "boolq",
+  "test_split": null,
+  "validation_split": "validation",
+  "output_type": "multiple_choice",
+  "target_delimiter": " "
+ },
+ "raw_results": {
+  "alias": "boolq",
+  "acc,none": 0.225,
+  "acc_stderr,none": 0.06686668711812965
+ }
+}

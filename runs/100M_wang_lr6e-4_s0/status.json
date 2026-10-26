@@ -1,0 +1,7 @@
+{
+ "status": "completed",
+ "stop_reason": "converged: best validation loss improved < 0.002 nats over the trailing 10B tokens",
+ "step": 190735,
+ "tokens": 100000071680,
+ "updated": "Fri Oct 23 12:34:41 2026"
+}

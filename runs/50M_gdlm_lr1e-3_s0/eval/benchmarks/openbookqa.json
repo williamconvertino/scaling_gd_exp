@@ -1,0 +1,34 @@
+{
+ "task": "openbookqa",
+ "display": "OpenBookQA",
+ "metric": "acc_norm",
+ "value": 0.284,
+ "stderr": 0.020186703693570774,
+ "n_samples": {
+  "original": 500,
+  "effective": 500
+ },
+ "version": 1.0,
+ "harness_version": "0.4.9",
+ "checkpoint": "ckpt_100B.pt",
+ "checkpoint_tokens": 100000071680,
+ "bos_prepended": true,
+ "num_fewshot": 0,
+ "limit": null,
+ "seconds": 53.70913791656494,
+ "config": {
+  "dataset_path": "openbookqa",
+  "dataset_name": "main",
+  "test_split": "test",
+  "validation_split": "validation",
+  "output_type": "multiple_choice",
+  "target_delimiter": " "
+ },
+ "raw_results": {
+  "alias": "openbookqa",
+  "acc,none": 0.146,
+  "acc_stderr,none": 0.015807205175834907,
+  "acc_norm,none": 0.284,
+  "acc_norm_stderr,none": 0.020186703693570774
+ }
+}

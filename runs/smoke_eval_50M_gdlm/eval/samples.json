@@ -1,0 +1,34 @@
+{
+ "run_id": "smoke_eval_50M_gdlm",
+ "checkpoint": "ckpt_smoke.pt",
+ "checkpoint_tokens": 0,
+ "decoding": "greedy (sample.greedy), fixed prompts, seed 0",
+ "max_new_tokens": 24,
+ "samples": [
+  {
+   "prompt": "The history of the printing press",
+   "continuation": "of the the the the the the the the the the the the the the the the the the the the the the the"
+  },
+  {
+   "prompt": "Photosynthesis is the process by which",
+   "continuation": "the the the the the the the the the the the the the the the the the the the the the the the the"
+  },
+  {
+   "prompt": "In mathematics, a prime number is",
+   "continuation": "a a a a a a a a a a a a a a a a a a a a a a a a"
+  },
+  {
+   "prompt": "The main causes of the French Revolution were",
+   "continuation": "the the the the the the the the the the the the the the the the the the the the the the the the"
+  },
+  {
+   "prompt": "To bake a simple loaf of bread, you need",
+   "continuation": "of of of of of of of of of of of of of of of of of of of of of of of of"
+  },
+  {
+   "prompt": "Water boils at a lower temperature at high altitude because",
+   "continuation": "at at at at at at at at at at at at at at at at at at at at at at at at"
+  }
+ ],
+ "time": "Tue Oct 20 18:08:13 2026"
+}

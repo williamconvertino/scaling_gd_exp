@@ -1,0 +1,130 @@
+# Run matrix (DETAILS.md §6, EXPERIMENT_ORDER.md). launch.py expands each experiment's `sweep:` (Cartesian
+# product) into runs `{scale}_{family}_lr{lr}_s{seed}`, submits only runs whose phase is in `phases_enabled`
+# and whose status is `planned`, and records job ids in the `runs:` section at the bottom of this file.
+# Every sweep axis has exactly one value for now (DETAILS.md §6.6); add values later without code changes.
+
+phases_enabled: [1, 2, 3, 4, 5]   # Phase 0 gate passed 2026-10-20. 2026-10-21: user asked to queue 1.2B GDLM
+                                  # behind everything else, so phases 2-4 are chained now and 1.2B GDLM (phase 5) last
+
+train_defaults:
+  budget_tokens: 100.0e+9     # LR schedule always defined over 100B tokens
+  batch_seqs: 256            # x 2048 = 524,288 tokens/step -> 190,735 steps
+  warmup_tokens: 2.0e+9       # 2% of 100B
+  min_lr_frac: 0.1
+  weight_decay: 0.1
+  betas: [0.9, 0.95]
+  adam_eps: 1.0e-8
+  grad_clip: 1.0
+  val_every_tokens: 1.0e+9    # full validation split; also at step 0 and at the end
+  log_every: 5
+  resume_every_min: 45       # rolling full-state resume checkpoint
+  es_min_tokens: 50.0e+9      # convergence stop only after 50B tokens ...
+  es_window_tokens: 10.0e+9   # ... if the best val loss improved < es_min_delta over the trailing 10B
+  es_min_delta: 0.002
+  spike_nats: 0.5            # divergence: val loss > best + 0.5 nats that does not recover within 1B tokens
+  spike_recover_tokens: 1.0e+9
+  eval_micro_batch: 32
+
+# Default LRs (DETAILS.md §6.2), identical across families within a scale.
+experiments:
+  # ---- Phase 1: GDLM and Wang et al. at 50M / 100M
+  - {name: 50M_gdlm, scale: 50M, family: gdlm, phase: 1, priority: 1, sweep: {lr: [1.0e-3], seed: [0]}, ckpt_every_tokens: 5.0e+9, micro_batch: 32, runtime: {}}
+  - {name: 50M_wang, scale: 50M, family: wang, phase: 1, priority: 2, sweep: {lr: [1.0e-3], seed: [0]}, ckpt_every_tokens: 5.0e+9, micro_batch: 32, runtime: {}}
+  - {name: 100M_gdlm, scale: 100M, family: gdlm, phase: 1, priority: 3, sweep: {lr: [6.0e-4], seed: [0]}, ckpt_every_tokens: 5.0e+9, micro_batch: 32, runtime: {}}
+  - {name: 100M_wang, scale: 100M, family: wang, phase: 1, priority: 4, sweep: {lr: [6.0e-4], seed: [0]}, ckpt_every_tokens: 5.0e+9, micro_batch: 32, runtime: {}}
+  # ---- Phase 2: Transformer at 50M / 100M
+  - {name: 50M_transformer, scale: 50M, family: transformer, phase: 2, priority: 5, sweep: {lr: [1.0e-3], seed: [0]}, ckpt_every_tokens: 5.0e+9, micro_batch: 32, runtime: {}}
+  - {name: 100M_transformer, scale: 100M, family: transformer, phase: 2, priority: 6, sweep: {lr: [6.0e-4], seed: [0]}, ckpt_every_tokens: 5.0e+9, micro_batch: 32, runtime: {}}
+  # ---- Phase 3: GDLM and Wang et al. at 400M
+  - {name: 400M_gdlm, scale: 400M, family: gdlm, phase: 3, priority: 7, sweep: {lr: [3.0e-4], seed: [0]}, ckpt_every_tokens: 10.0e+9, micro_batch: 32, runtime: {}}
+  - {name: 400M_wang, scale: 400M, family: wang, phase: 3, priority: 8, sweep: {lr: [3.0e-4], seed: [0]}, ckpt_every_tokens: 10.0e+9, micro_batch: 8, runtime: {}}
+  # ---- Phase 4: Transformer at 400M
+  - {name: 400M_transformer, scale: 400M, family: transformer, phase: 4, priority: 9, sweep: {lr: [3.0e-4], seed: [0]}, ckpt_every_tokens: 10.0e+9, micro_batch: 16, runtime: {}}
+  # ---- 1.2B. DETAILS.md §1 says configs/tokenization only; on 2026-10-21 the user asked to train 1.2B GDLM
+  # (only) after everything else. Budget = all available Llama-3.2 train windows: 47,556,233 // 256 = 185,766
+  # steps = 97.39B tokens (user accepted ~97B on 2026-10-20); the LR schedule is defined over this budget.
+  # Wang/Transformer stay phase "never" (never launchable).
+  - {name: 1.2B_gdlm, scale: 1.2B, family: gdlm, phase: 5, train: {budget_tokens: 97394884608}, priority: 10, sweep: {lr: [2.0e-4], seed: [0]}, ckpt_every_tokens: 10.0e+9, micro_batch: 8, runtime: {}}
+  - {name: 1.2B_wang, scale: 1.2B, family: wang, phase: never, priority: 11, sweep: {lr: [2.0e-4], seed: [0]}, ckpt_every_tokens: 10.0e+9, micro_batch: 4, runtime: {}}
+  - {name: 1.2B_transformer, scale: 1.2B, family: transformer, phase: never, priority: 12, sweep: {lr: [2.0e-4], seed: [0]}, ckpt_every_tokens: 10.0e+9, micro_batch: 4, runtime: {}}
+
+# ---- runs (maintained by launch.py; everything below this line is rewritten) ----
+runs:
+  50M_gdlm_lr1e-3_s0:
+    experiment: 50M_gdlm
+    phase: 1
+    status: done
+    train_job: '59069673'
+    eval_job: '59069674'
+    submitted: Tue Oct 20 17:43:56 2026
+  50M_wang_lr1e-3_s0:
+    experiment: 50M_wang
+    phase: 1
+    status: done
+    train_job: '59069675'
+    eval_job: '59069676'
+    submitted: Tue Oct 20 17:43:57 2026
+  100M_gdlm_lr6e-4_s0:
+    experiment: 100M_gdlm
+    phase: 1
+    status: done
+    train_job: '59069677'
+    eval_job: '59069678'
+    submitted: Tue Oct 20 17:43:57 2026
+  100M_wang_lr6e-4_s0:
+    experiment: 100M_wang
+    phase: 1
+    status: done
+    train_job: '59069679'
+    eval_job: '59069682'
+    submitted: Tue Oct 20 17:43:57 2026
+  50M_transformer_lr1e-3_s0:
+    experiment: 50M_transformer
+    phase: 2
+    status: cancelled
+    train_job: '59882903'
+    eval_job: '59882904'
+    submitted: Sun Oct 25 2026 (resubmitted from ckpt_050B after QOS-cap kill of 59246990)
+  100M_transformer_lr6e-4_s0:
+    experiment: 100M_transformer
+    phase: 2
+    status: cancelled
+    train_job: '59246992'
+    eval_job: '59246993'
+    submitted: Wed Oct 21 21:39:17 2026
+  400M_gdlm_lr3e-4_s0:
+    experiment: 400M_gdlm
+    phase: 3
+    status: submitted
+    train_job: '60013716'
+    eval_job: '59246995'
+    submitted: Wed Oct 21 21:39:17 2026
+  400M_wang_lr3e-4_s0:
+    experiment: 400M_wang
+    phase: 3
+    status: submitted
+    train_job: '59246996'
+    eval_job: '59246997'
+    submitted: Wed Oct 21 21:39:17 2026
+  400M_transformer_lr3e-4_s0:
+    experiment: 400M_transformer
+    phase: 4
+    status: cancelled
+    train_job: '59246998'
+    eval_job: '59246999'
+    submitted: Wed Oct 21 21:39:17 2026
+  1.2B_gdlm_lr2e-4_s0:
+    experiment: 1.2B_gdlm
+    phase: 5
+    status: submitted
+    train_job: '59247000'
+    eval_job: '59247001'
+    submitted: Wed Oct 21 21:39:18 2026
+  1.2B_wang_lr2e-4_s0:
+    experiment: 1.2B_wang
+    phase: never
+    status: planned
+  1.2B_transformer_lr2e-4_s0:
+    experiment: 1.2B_transformer
+    phase: never
+    status: planned

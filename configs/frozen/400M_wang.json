@@ -1,0 +1,51 @@
+{
+ "scale": "400M",
+ "family": "wang",
+ "tokenizer": "llama2",
+ "tokenizer_id": "hf-internal-testing/llama-tokenizer",
+ "data_seed": 1234,
+ "arch": {
+  "family": "wang",
+  "vocab": 32000,
+  "d": 1024,
+  "max_seq_len": 2048,
+  "n_layers": 0,
+  "n_heads": 0,
+  "n_kv_heads": 0,
+  "head_dim": 64,
+  "ffn": 0,
+  "rope_theta": 10000.0,
+  "rope_scaling": {},
+  "norm_eps": 1e-05,
+  "gd_layers": 173,
+  "gd_heads": 16,
+  "gd_head_dim": 64,
+  "cov_dim": 1024,
+  "readout_eps": 1e-20,
+  "init_std": 0.02
+ },
+ "config_sha256": "12c23eed9c1c7d2f0632629542d0fd2486d85faa3de949356f34f0be65157cff",
+ "target_total_params": 397722624,
+ "actual_total_params": 397672448,
+ "embedding_params": 32768000,
+ "nonembedding_params": 364904448,
+ "params_by_part": {
+  "positional": 2097152,
+  "embedding": 32768000,
+  "gd": 362807296
+ },
+ "mismatch_frac": -0.00012615827456674932,
+ "within_tolerance": true,
+ "flops_per_token_train": 5638717440,
+ "flops_method": "Training FLOPs per token as implemented: 3 x forward; forward = 2 x (matmul weights, the tied V/O map counted twice, readout V x d once) + causal attention 2 x 2 x (T/2) x dh per head-layer. Embedding lookups, norms and softmax are excluded.",
+ "act_bytes_per_token_est": 1387008,
+ "trainable": true,
+ "label": "Wang et al. (position-only GD, parameter-matched)",
+ "deviations_from_wang_et_al": [
+  "parameter-matched: depth (number of GD layers) chosen to match the Transformer total",
+  "one learned positional-covariate table shared by all GD layers (width cov_dim), unit-RMS init",
+  "tied QK and tied V/O (W_O = W_V^T) per head, softmax kernel normalized over examples i < t",
+  "zero-mean tied embeddings and gainless RMS readout, as in gdlm",
+  "Llama-2 / Llama-3.2 tokenizers, FineWeb-Edu, 2048 context, document-masked kernels"
+ ]
+}

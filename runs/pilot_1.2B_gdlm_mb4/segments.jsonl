@@ -1,0 +1,2 @@
+{"job": "59247015", "host": "dcc-h200-gpu-ferc-l-e36-9", "end": "Wed Oct 21 21:53:38 2026", "seconds": 815.4839663505554, "world": 1, "gpu": "NVIDIA H200", "gpu_hours": 0.2265233239862654, "peak_mem_gb": 82.92707061767578, "steps": [0, 60], "how": "end"}
+{"job": "59247614", "host": "dcc-h200-gpu-ferc-l-e36-9", "end": "Wed Oct 21 23:57:42 2026", "seconds": 6577.8903522491455, "world": 1, "gpu": "NVIDIA H200", "gpu_hours": 1.8271917645136515, "peak_mem_gb": 43.27031707763672, "steps": [60, 660], "how": "end"}

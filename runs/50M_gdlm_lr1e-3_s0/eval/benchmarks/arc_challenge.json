@@ -1,0 +1,34 @@
+{
+ "task": "arc_challenge",
+ "display": "ARC-C",
+ "metric": "acc_norm",
+ "value": 0.2380546075085324,
+ "stderr": 0.012445770028026118,
+ "n_samples": {
+  "original": 1172,
+  "effective": 1172
+ },
+ "version": 1.0,
+ "harness_version": "0.4.9",
+ "checkpoint": "ckpt_100B.pt",
+ "checkpoint_tokens": 100000071680,
+ "bos_prepended": true,
+ "num_fewshot": 0,
+ "limit": null,
+ "seconds": 77.98496627807617,
+ "config": {
+  "dataset_path": "allenai/ai2_arc",
+  "dataset_name": "ARC-Challenge",
+  "test_split": "test",
+  "validation_split": "validation",
+  "output_type": "multiple_choice",
+  "target_delimiter": " "
+ },
+ "raw_results": {
+  "alias": "arc_challenge",
+  "acc,none": 0.18600682593856654,
+  "acc_stderr,none": 0.011370940183266797,
+  "acc_norm,none": 0.2380546075085324,
+  "acc_norm_stderr,none": 0.012445770028026118
+ }
+}

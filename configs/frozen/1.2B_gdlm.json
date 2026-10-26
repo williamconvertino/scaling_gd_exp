@@ -1,0 +1,48 @@
+{
+ "scale": "1.2B",
+ "family": "gdlm",
+ "tokenizer": "llama3",
+ "tokenizer_id": "meta-llama/Llama-3.2-1B",
+ "data_seed": 1234,
+ "arch": {
+  "family": "gdlm",
+  "vocab": 128256,
+  "d": 2048,
+  "max_seq_len": 2048,
+  "n_layers": 16,
+  "n_heads": 32,
+  "n_kv_heads": 8,
+  "head_dim": 64,
+  "ffn": 6848,
+  "rope_theta": 500000.0,
+  "rope_scaling": {
+   "factor": 32.0,
+   "low_freq_factor": 1.0,
+   "high_freq_factor": 4.0,
+   "original_max_position_embeddings": 8192
+  },
+  "norm_eps": 1e-05,
+  "gd_layers": 16,
+  "gd_heads": 32,
+  "gd_head_dim": 64,
+  "cov_dim": 0,
+  "readout_eps": 1e-20,
+  "init_std": 0.02
+ },
+ "config_sha256": "ac88bdfcf1f45d02c658ceb670a57de986d354c41dfb5ff02c59c8d3a003a5ca",
+ "target_total_params": 1235814400,
+ "actual_total_params": 1237911552,
+ "embedding_params": 262668288,
+ "nonembedding_params": 975243264,
+ "params_by_part": {
+  "embedding": 262668288,
+  "generator": 841025536,
+  "gd": 134217728
+ },
+ "mismatch_frac": 0.0016969797406471393,
+ "within_tolerance": true,
+ "flops_per_token_train": 8635023360,
+ "flops_method": "Training FLOPs per token as implemented: 3 x forward; forward = 2 x (matmul weights, the tied V/O map counted twice, readout V x d once) + causal attention 2 x 2 x (T/2) x dh per head-layer. Embedding lookups, norms and softmax are excluded.",
+ "act_bytes_per_token_est": 2570752,
+ "trainable": false
+}

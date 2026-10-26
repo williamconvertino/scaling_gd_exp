@@ -1,0 +1,18 @@
+{
+ "run_id": "100M_gdlm_lr6e-4_s0",
+ "checkpoint": "ckpt_100B.pt",
+ "checkpoint_step": 190735,
+ "checkpoint_tokens": 100000071680,
+ "checkpoint_val_loss": 2.6386180096201826,
+ "split": "test",
+ "test_loss_nats_per_token": 2.6435912450302785,
+ "bootstrap_se": 0.004206775145405094,
+ "bootstrap": "document cluster, 1000 resamples",
+ "n_targets": 49890884,
+ "n_documents": 42704,
+ "n_windows": 24415,
+ "nll_dump": "eval/test_nll.npy",
+ "nll_index": "results/raw/nll_index_llama2_test.npz",
+ "seconds": 93.4496853351593,
+ "time": "Thu Oct 22 14:38:17 2026"
+}

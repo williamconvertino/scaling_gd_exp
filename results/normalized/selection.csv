@@ -1,0 +1,6 @@
+scale,family,run_id,lr,seed,status,best_valid_loss,best_valid_tokens,training_tokens,selected,rule
+100M,gdlm,100M_gdlm_lr6e-4_s0,0.0006,0,completed,2.6385592969760157,99000254464,100000071680,True,lowest best validation loss among completed sweep members
+100M,wang,100M_wang_lr6e-4_s0,0.0006,0,completed,5.513531173914532,97000095744,100000071680,True,lowest best validation loss among completed sweep members
+50M,gdlm,50M_gdlm_lr1e-3_s0,0.001,0,completed,2.8209628144157426,100000071680,100000071680,True,lowest best validation loss among completed sweep members
+50M,transformer,50M_transformer_lr1e-3_s0,0.001,0,running,3.439485603232117,1000341504,1000341504,False,lowest best validation loss among completed sweep members
+50M,wang,50M_wang_lr1e-3_s0,0.001,0,completed,5.541444643042727,97000095744,100000071680,True,lowest best validation loss among completed sweep members

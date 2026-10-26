@@ -1,0 +1,93 @@
+{
+ "run_id": "1.2B_gdlm_lr2e-4_s0",
+ "experiment": "1.2B_gdlm",
+ "phase": 5,
+ "frozen": {
+  "scale": "1.2B",
+  "family": "gdlm",
+  "tokenizer": "llama3",
+  "tokenizer_id": "meta-llama/Llama-3.2-1B",
+  "data_seed": 1234,
+  "arch": {
+   "family": "gdlm",
+   "vocab": 128256,
+   "d": 2048,
+   "max_seq_len": 2048,
+   "n_layers": 16,
+   "n_heads": 32,
+   "n_kv_heads": 8,
+   "head_dim": 64,
+   "ffn": 6848,
+   "rope_theta": 500000.0,
+   "rope_scaling": {
+    "factor": 32.0,
+    "low_freq_factor": 1.0,
+    "high_freq_factor": 4.0,
+    "original_max_position_embeddings": 8192
+   },
+   "norm_eps": 1e-05,
+   "gd_layers": 16,
+   "gd_heads": 32,
+   "gd_head_dim": 64,
+   "cov_dim": 0,
+   "readout_eps": 1e-20,
+   "init_std": 0.02
+  },
+  "config_sha256": "ac88bdfcf1f45d02c658ceb670a57de986d354c41dfb5ff02c59c8d3a003a5ca",
+  "target_total_params": 1235814400,
+  "actual_total_params": 1237911552,
+  "embedding_params": 262668288,
+  "nonembedding_params": 975243264,
+  "params_by_part": {
+   "embedding": 262668288,
+   "generator": 841025536,
+   "gd": 134217728
+  },
+  "mismatch_frac": 0.0016969797406471393,
+  "within_tolerance": true,
+  "flops_per_token_train": 8635023360,
+  "flops_method": "Training FLOPs per token as implemented: 3 x forward; forward = 2 x (matmul weights, the tied V/O map counted twice, readout V x d once) + causal attention 2 x 2 x (T/2) x dh per head-layer. Embedding lookups, norms and softmax are excluded.",
+  "act_bytes_per_token_est": 2570752,
+  "trainable": false
+ },
+ "train": {
+  "budget_tokens": 97394884608,
+  "batch_seqs": 256,
+  "warmup_tokens": 2000000000.0,
+  "min_lr_frac": 0.1,
+  "weight_decay": 0.1,
+  "betas": [
+   0.9,
+   0.95
+  ],
+  "adam_eps": 1e-08,
+  "grad_clip": 1.0,
+  "val_every_tokens": 1000000000.0,
+  "log_every": 5,
+  "resume_every_min": 45,
+  "es_min_tokens": 50000000000.0,
+  "es_window_tokens": 10000000000.0,
+  "es_min_delta": 0.002,
+  "spike_nats": 0.5,
+  "spike_recover_tokens": 1000000000.0,
+  "eval_micro_batch": 32,
+  "lr": 0.0002,
+  "seed": 0,
+  "data_seed": 1234,
+  "micro_batch": 8,
+  "ckpt_every_tokens": 10000000000.0,
+  "tokens_per_step": 524288,
+  "total_steps": 185766,
+  "warmup_steps": 3815
+ },
+ "runtime": {},
+ "data": {
+  "tokenizer": "llama3",
+  "data_dir": "/work/wac20/scaling_gd_for_lm/data/llama3",
+  "manifest_sha256": "2db67bb89326cc18de7576e3b62b7518f911d0fb16255c430101b2aff19c6fe1",
+  "tokenizer_revision": "tokenizer.json:sha256:b47fcb7017102fb3594326d69acc6b74872032ed15def90890d49d61ea94d220"
+ },
+ "code_sha256": "f683cb220fbf4a35a7706dbd07d4b61eac17de55820cf8d40c331b790899dc67",
+ "git_commit": null,
+ "created": "Wed Oct 21 21:39:18 2026"
+}

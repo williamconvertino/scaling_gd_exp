@@ -1,0 +1,76 @@
+{
+ "tokenizer": "llama3",
+ "tokenizer_id": "meta-llama/Llama-3.2-1B",
+ "tokenizer_vocab": 128256,
+ "tokenizer_revision": "tokenizer.json:sha256:b47fcb7017102fb3594326d69acc6b74872032ed15def90890d49d61ea94d220",
+ "bos_id": 128000,
+ "eos_inserted": false,
+ "dtype": "uint32",
+ "source": "HuggingFaceFW/fineweb-edu sample/100BT",
+ "split_seed": 1234,
+ "split_rule": "document-level, see data.split_plan",
+ "packing": "BOS + document, no EOS, concatenated; windows of 2048+1; document-masked attention",
+ "heldout_docs": "data/manifests/heldout_docs.json",
+ "splits": {
+  "validation": {
+   "file": "analysis.bin",
+   "tokens": 16964579,
+   "docs": 16982,
+   "windows_2048": 8283
+  },
+  "test": {
+   "file": "val.bin",
+   "tokens": 42421714,
+   "docs": 42704,
+   "windows_2048": 20713
+  },
+  "reserved": {
+   "file": "val_small.bin",
+   "tokens": 4239829,
+   "docs": 4353,
+   "windows_2048": 2070
+  },
+  "train": {
+   "file": "train.bin",
+   "tokens": 97395166891,
+   "docs": 97206647,
+   "windows_2048": 47556233
+  }
+ },
+ "files": {
+  "analysis.bin": {
+   "bytes": 67858316,
+   "sha256": "2a93c18d548bafc14d9d35afcc54c54098099443a3985263a91643b2c621f077"
+  },
+  "analysis.docs.npy": {
+   "bytes": 135992,
+   "sha256": "8c1214471f559df334bcd9e6663f0e5e2e92f73725d61c68daebc88cdfddc9d7"
+  },
+  "train.bin": {
+   "bytes": 389580667564,
+   "sha256": "a81f724ae4412e4aa8a722e8b93ccd47ca4833b5b8eae4d2984a65e2454852c8"
+  },
+  "train.docs.npy": {
+   "bytes": 777653312,
+   "sha256": "15557c5b2df7ce5ede34773447637e5dfcad25fdee41da640f6ac52ae51ded73"
+  },
+  "val.bin": {
+   "bytes": 169686856,
+   "sha256": "2710bd24c3adec90ac1b882b0ffb4af0cddb925ef591bc83fad694d7f08ed97b"
+  },
+  "val.docs.npy": {
+   "bytes": 341768,
+   "sha256": "9f3c207b54afef2d9ba1f64f7d0e3f707766d279b11c2dc2f2d938253c215418"
+  },
+  "val_small.bin": {
+   "bytes": 16959316,
+   "sha256": "0ab00ef7f7ad2105567323c681ebb3246c2eb5ba902f4e36abd14b3e1e0d7adc"
+  },
+  "val_small.docs.npy": {
+   "bytes": 34960,
+   "sha256": "577c70248b7bf24f7698765ccfe9ffef4b2908a40c07e83c2e4f7c79f469e4d0"
+  }
+ },
+ "created": "Tue Oct 20 22:52:14 2026",
+ "manifest_sha256": "2db67bb89326cc18de7576e3b62b7518f911d0fb16255c430101b2aff19c6fe1"
+}

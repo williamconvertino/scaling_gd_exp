@@ -1,0 +1,43 @@
+{
+ "scale": "400M",
+ "family": "gdlm",
+ "tokenizer": "llama2",
+ "tokenizer_id": "hf-internal-testing/llama-tokenizer",
+ "data_seed": 1234,
+ "arch": {
+  "family": "gdlm",
+  "vocab": 32000,
+  "d": 1024,
+  "max_seq_len": 2048,
+  "n_layers": 24,
+  "n_heads": 16,
+  "n_kv_heads": 16,
+  "head_dim": 64,
+  "ffn": 2880,
+  "rope_theta": 10000.0,
+  "rope_scaling": {},
+  "norm_eps": 1e-05,
+  "gd_layers": 24,
+  "gd_heads": 16,
+  "gd_head_dim": 64,
+  "cov_dim": 0,
+  "readout_eps": 1e-20,
+  "init_std": 0.02
+ },
+ "config_sha256": "b964fda86cea1423ac864d72a50f957285496f11db39d2276c01de14b4cd4687",
+ "target_total_params": 397722624,
+ "actual_total_params": 396149760,
+ "embedding_params": 32768000,
+ "nonembedding_params": 363381760,
+ "params_by_part": {
+  "embedding": 32768000,
+  "generator": 313050112,
+  "gd": 50331648
+ },
+ "mismatch_frac": -0.003954675708867897,
+ "within_tolerance": true,
+ "flops_per_token_train": 3131572224,
+ "flops_method": "Training FLOPs per token as implemented: 3 x forward; forward = 2 x (matmul weights, the tied V/O map counted twice, readout V x d once) + causal attention 2 x 2 x (T/2) x dh per head-layer. Embedding lookups, norms and softmax are excluded.",
+ "act_bytes_per_token_est": 1279488,
+ "trainable": true
+}

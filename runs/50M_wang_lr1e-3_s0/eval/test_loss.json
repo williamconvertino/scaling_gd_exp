@@ -1,0 +1,18 @@
+{
+ "run_id": "50M_wang_lr1e-3_s0",
+ "checkpoint": "ckpt_100B.pt",
+ "checkpoint_step": 190735,
+ "checkpoint_tokens": 100000071680,
+ "checkpoint_val_loss": 5.5419296517297845,
+ "split": "test",
+ "test_loss_nats_per_token": 5.548662951646467,
+ "bootstrap_se": 0.003357212683801535,
+ "bootstrap": "document cluster, 1000 resamples",
+ "n_targets": 49890884,
+ "n_documents": 42704,
+ "n_windows": 24415,
+ "nll_dump": "eval/test_nll.npy",
+ "nll_index": "results/raw/nll_index_llama2_test.npz",
+ "seconds": 76.42872905731201,
+ "time": "Wed Oct 21 23:35:12 2026"
+}

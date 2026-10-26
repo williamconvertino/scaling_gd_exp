@@ -1,0 +1,18 @@
+{
+ "run_id": "smoke_eval_50M_gdlm",
+ "checkpoint": "ckpt_smoke.pt",
+ "checkpoint_step": 0,
+ "checkpoint_tokens": 0,
+ "checkpoint_val_loss": 9.694832690504192,
+ "split": "test",
+ "test_loss_nats_per_token": 6.735320303829742,
+ "bootstrap_se": 0.0030600550781736033,
+ "bootstrap": "document cluster, 1000 resamples",
+ "n_targets": 49890884,
+ "n_documents": 42704,
+ "n_windows": 24415,
+ "nll_dump": "eval/test_nll.npy",
+ "nll_index": "results/raw/nll_index_llama2_test.npz",
+ "seconds": 81.99116444587708,
+ "time": "Tue Oct 20 17:54:04 2026"
+}

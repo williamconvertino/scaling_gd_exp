@@ -1,0 +1,32 @@
+{
+ "task": "winogrande",
+ "display": "WinoGrande",
+ "metric": "acc",
+ "value": 0.575,
+ "stderr": 0.07915823166939519,
+ "n_samples": {
+  "original": 1267,
+  "effective": 40
+ },
+ "version": 1.0,
+ "harness_version": "0.4.9",
+ "checkpoint": "ckpt_smoke.pt",
+ "checkpoint_tokens": 0,
+ "bos_prepended": true,
+ "num_fewshot": 0,
+ "limit": 40,
+ "seconds": 119.60490870475769,
+ "config": {
+  "dataset_path": "winogrande",
+  "dataset_name": "winogrande_xl",
+  "test_split": null,
+  "validation_split": "validation",
+  "output_type": "multiple_choice",
+  "target_delimiter": " "
+ },
+ "raw_results": {
+  "alias": "winogrande",
+  "acc,none": 0.575,
+  "acc_stderr,none": 0.07915823166939519
+ }
+}

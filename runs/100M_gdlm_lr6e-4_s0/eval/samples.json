@@ -1,0 +1,34 @@
+{
+ "run_id": "100M_gdlm_lr6e-4_s0",
+ "checkpoint": "ckpt_100B.pt",
+ "checkpoint_tokens": 100000071680,
+ "decoding": "greedy (sample.greedy), fixed prompts, seed 0",
+ "max_new_tokens": 64,
+ "samples": [
+  {
+   "prompt": "The history of the printing press",
+   "continuation": "is a history of the development of the printing press. The history of the printing press is a history of the development of the printing press. The history of the printing press is a history of the development of the printing press. The history of the printing press is a history of the development of the printing press. The history"
+  },
+  {
+   "prompt": "Photosynthesis is the process by which",
+   "continuation": "plants and animals use sunlight to produce energy. The photosynthesis process is important for the growth of plants and animals. The photosynthesis process is important for the growth of plants and animals because it is the process by which the plants and animals use sunlight to produce energy. The photosynthesis process is important"
+  },
+  {
+   "prompt": "In mathematics, a prime number is",
+   "continuation": "a number that is not a prime number but a number that is a number that is a number that is a number that is not a number that is a number that is a number that is a number that is a number that is a number that is a number that is a number that is a number that is a number"
+  },
+  {
+   "prompt": "The main causes of the French Revolution were",
+   "continuation": "the revolutionary revolutions of 1789 and 1792. The French Revolution was a revolution of the people, the people\u2019s government, and the people\u2019s government. The people\u2019s government was the government of the people. The people\u2019s government was the government of the people"
+  },
+  {
+   "prompt": "To bake a simple loaf of bread, you need",
+   "continuation": "to make a loaf of bread. You can do this by making a loaf of bread with a loaf of bread. You can also make a loaf of bread with a loaf of bread.\nYou can do this by making a loaf of bread with a loaf of bread. You can also"
+  },
+  {
+   "prompt": "Water boils at a lower temperature at high altitude because",
+   "continuation": "of the high pressure of the atmosphere.\nThe temperature of the water in the atmosphere is about 1000 degrees Celsius.\nThe temperature of the water in the atmosphere is about 1000 degrees Celsius.\nThe temperature of the water in the atmosphere is about 10"
+  }
+ ],
+ "time": "Thu Oct 22 14:47:20 2026"
+}

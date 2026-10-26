@@ -1,0 +1,3 @@
+scale,family,run_id,baseline_run_id,tokenizer_id,definition,ci,delta,ci_lo,ci_hi,se,n_targets,n_documents
+100M,gdlm,100M_gdlm_lr6e-4_s0,100M_wang_lr6e-4_s0,hf-internal-testing/llama-tokenizer,"L(model) - L(Wang), nats/token, test split; negative favors the model",95% paired document-cluster bootstrap (2000 resamples),-2.8770311592674886,-2.8815143004981048,-2.8728659070999027,0.0022458605169686356,49890884,42704
+50M,gdlm,50M_gdlm_lr1e-3_s0,50M_wang_lr1e-3_s0,hf-internal-testing/llama-tokenizer,"L(model) - L(Wang), nats/token, test split; negative favors the model",95% paired document-cluster bootstrap (2000 resamples),-2.7227206110710727,-2.727058982116105,-2.718807295604959,0.0021252730508458154,49890884,42704

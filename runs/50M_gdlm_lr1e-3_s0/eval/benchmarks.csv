@@ -1,0 +1,8 @@
+run_id,task,display,metric,accuracy_pct,stderr_pct,n,checkpoint,checkpoint_tokens,harness_version
+50M_gdlm_lr1e-3_s0,winogrande,WinoGrande,acc,50.355169692186266,1.4052131146915852,1267,ckpt_100B.pt,100000071680,0.4.9
+50M_gdlm_lr1e-3_s0,piqa,PIQA,acc_norm,59.41240478781285,1.1457256809261902,1838,ckpt_100B.pt,100000071680,0.4.9
+50M_gdlm_lr1e-3_s0,openbookqa,OpenBookQA,acc_norm,28.4,2.0186703693570776,500,ckpt_100B.pt,100000071680,0.4.9
+50M_gdlm_lr1e-3_s0,hellaswag,HellaSwag,acc_norm,30.631348336984665,0.4600194559865312,10042,ckpt_100B.pt,100000071680,0.4.9
+50M_gdlm_lr1e-3_s0,boolq,BoolQ,acc,43.76146788990825,0.8676717715731417,3270,ckpt_100B.pt,100000071680,0.4.9
+50M_gdlm_lr1e-3_s0,arc_easy,ARC-E,acc_norm,39.98316498316498,1.0051788039412914,2376,ckpt_100B.pt,100000071680,0.4.9
+50M_gdlm_lr1e-3_s0,arc_challenge,ARC-C,acc_norm,23.805460750853243,1.2445770028026117,1172,ckpt_100B.pt,100000071680,0.4.9

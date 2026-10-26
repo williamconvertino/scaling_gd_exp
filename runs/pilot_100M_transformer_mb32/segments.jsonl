@@ -1,0 +1,1 @@
+{"job": "59066542", "host": "dcc-h200-gpu-ferc-l-ac46-1", "end": "Tue Oct 20 17:37:47 2026", "seconds": 268.01835203170776, "world": 1, "gpu": "NVIDIA H200", "gpu_hours": 0.07444954223102994, "peak_mem_gb": 43.73692321777344, "steps": [0, 200], "how": "end"}

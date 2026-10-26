@@ -1,0 +1,48 @@
+{
+ "inputs": [
+  "results/normalized/val_curves.csv",
+  "results/normalized/test_gaps.csv",
+  "results/normalized/runs.csv"
+ ],
+ "runs": [
+  "100M_gdlm_lr6e-4_s0",
+  "100M_wang_lr6e-4_s0",
+  "50M_gdlm_lr1e-3_s0",
+  "50M_wang_lr1e-3_s0"
+ ],
+ "missing_families_by_scale": {
+  "50M": [
+   "transformer"
+  ],
+  "100M": [
+   "transformer"
+  ],
+  "400M": [
+   "gdlm",
+   "wang",
+   "transformer"
+  ],
+  "1.2B": [
+   "gdlm",
+   "wang",
+   "transformer"
+  ]
+ },
+ "selected_checkpoint_tokens": {
+  "100M/gdlm": 100000071680.0,
+  "100M/wang": 100000071680.0,
+  "50M/gdlm": 100000071680.0,
+  "50M/wang": 100000071680.0
+ },
+ "gap_definition": "test_loss(model) - test_loss(Wang) within scale; 95% paired document bootstrap",
+ "tokenizers": {
+  "50M": "Llama-2",
+  "100M": "Llama-2",
+  "400M": "Llama-2",
+  "1.2B": "Llama-3.2"
+ },
+ "seeds": 1,
+ "x_axis": "linear, billions of training tokens",
+ "note": "step-0 validation point omitted from the curves (near ln V); it is in val_curves.csv",
+ "rendered": "Fri Oct 23 12:48:13 2026"
+}

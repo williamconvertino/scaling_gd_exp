@@ -1,0 +1,76 @@
+{
+ "tokenizer": "llama2",
+ "tokenizer_id": "hf-internal-testing/llama-tokenizer",
+ "tokenizer_vocab": 32000,
+ "tokenizer_revision": "tokenizer.json:sha256:c79a3d41a49f2a06f9bc0fe56be3c9e50e9f7398d2154e315129c607f77cb852",
+ "bos_id": 1,
+ "eos_inserted": false,
+ "dtype": "uint16",
+ "source": "HuggingFaceFW/fineweb-edu sample/100BT",
+ "split_seed": 1234,
+ "split_rule": "document-level, see data.split_plan",
+ "packing": "BOS + document, no EOS, concatenated; windows of 2048+1; document-masked attention",
+ "heldout_docs": "data/manifests/heldout_docs.json",
+ "splits": {
+  "validation": {
+   "file": "analysis.bin",
+   "tokens": 20000834,
+   "docs": 16982,
+   "windows_2048": 9766
+  },
+  "test": {
+   "file": "val.bin",
+   "tokens": 50000667,
+   "docs": 42704,
+   "windows_2048": 24414
+  },
+  "reserved": {
+   "file": "val_small.bin",
+   "tokens": 5003098,
+   "docs": 4353,
+   "windows_2048": 2442
+  },
+  "train": {
+   "file": "train.bin",
+   "tokens": 114782422963,
+   "docs": 97206647,
+   "windows_2048": 56046104
+  }
+ },
+ "files": {
+  "analysis.bin": {
+   "bytes": 40001668,
+   "sha256": "2cfcc29305ba5aec18c9d57e829deabf4264536583bbb7c3715b690e548af4f2"
+  },
+  "analysis.docs.npy": {
+   "bytes": 135992,
+   "sha256": "9c1cb9c05df39fda2a0873441c8636003bc5fab36358b289b476ace0b972e41e"
+  },
+  "train.bin": {
+   "bytes": 229564845926,
+   "sha256": "8071661dc9bc61f6755040d2a91735f4a501cf39889c112299e729f31805a9c8"
+  },
+  "train.docs.npy": {
+   "bytes": 777653312,
+   "sha256": "f78fbcb9f3bad88838350ab8f69759b6d082ccb37373253ee81a95a45ac3991e"
+  },
+  "val.bin": {
+   "bytes": 100001334,
+   "sha256": "f7d86639e46b0e8d19c3e5f36dd63362af8bf3a9b9fe76b782e67b661e8655e4"
+  },
+  "val.docs.npy": {
+   "bytes": 341768,
+   "sha256": "59feea37598f81a050db85da4b4ddd40f008a2a9516142ce0c06a3e3225a68b1"
+  },
+  "val_small.bin": {
+   "bytes": 10006196,
+   "sha256": "2dd201450bd41b5ccb706a6013d603890c83debb2ff4e6b6efb11697d2172cc1"
+  },
+  "val_small.docs.npy": {
+   "bytes": 34960,
+   "sha256": "8611222a86b74aa628fd678ce078b1d522c69fbd0c469b69fb7d1d24c8651ba0"
+  }
+ },
+ "created": "Tue Oct 20 17:22:04 2026",
+ "manifest_sha256": "04fca97d997f444f4c739333f9562ea8b251f27841715db798368ea8187cc4fb"
+}

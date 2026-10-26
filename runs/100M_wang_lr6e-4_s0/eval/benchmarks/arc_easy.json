@@ -1,0 +1,34 @@
+{
+ "task": "arc_easy",
+ "display": "ARC-E",
+ "metric": "acc_norm",
+ "value": 0.34175084175084175,
+ "stderr": 0.009732359564894466,
+ "n_samples": {
+  "original": 2376,
+  "effective": 2376
+ },
+ "version": 1.0,
+ "harness_version": "0.4.9",
+ "checkpoint": "ckpt_100B.pt",
+ "checkpoint_tokens": 100000071680,
+ "bos_prepended": true,
+ "num_fewshot": 0,
+ "limit": null,
+ "seconds": 59.965768337249756,
+ "config": {
+  "dataset_path": "allenai/ai2_arc",
+  "dataset_name": "ARC-Easy",
+  "test_split": "test",
+  "validation_split": "validation",
+  "output_type": "multiple_choice",
+  "target_delimiter": " "
+ },
+ "raw_results": {
+  "alias": "arc_easy",
+  "acc,none": 0.3413299663299663,
+  "acc_stderr,none": 0.009729473841242996,
+  "acc_norm,none": 0.34175084175084175,
+  "acc_norm_stderr,none": 0.009732359564894466
+ }
+}

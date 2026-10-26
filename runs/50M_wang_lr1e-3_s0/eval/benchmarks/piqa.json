@@ -1,0 +1,34 @@
+{
+ "task": "piqa",
+ "display": "PIQA",
+ "metric": "acc_norm",
+ "value": 0.5184983677910773,
+ "stderr": 0.01165783758381818,
+ "n_samples": {
+  "original": 1838,
+  "effective": 1838
+ },
+ "version": 1.0,
+ "harness_version": "0.4.9",
+ "checkpoint": "ckpt_100B.pt",
+ "checkpoint_tokens": 100000071680,
+ "bos_prepended": true,
+ "num_fewshot": 0,
+ "limit": null,
+ "seconds": 55.79735088348389,
+ "config": {
+  "dataset_path": "baber/piqa",
+  "dataset_name": null,
+  "test_split": null,
+  "validation_split": "validation",
+  "output_type": "multiple_choice",
+  "target_delimiter": " "
+ },
+ "raw_results": {
+  "alias": "piqa",
+  "acc,none": 0.543525571273123,
+  "acc_stderr,none": 0.011621538875661558,
+  "acc_norm,none": 0.5184983677910773,
+  "acc_norm_stderr,none": 0.01165783758381818
+ }
+}

@@ -1,0 +1,34 @@
+{
+ "task": "hellaswag",
+ "display": "HellaSwag",
+ "metric": "acc_norm",
+ "value": 0.30631348336984665,
+ "stderr": 0.004600194559865312,
+ "n_samples": {
+  "original": 10042,
+  "effective": 10042
+ },
+ "version": 1.0,
+ "harness_version": "0.4.9",
+ "checkpoint": "ckpt_100B.pt",
+ "checkpoint_tokens": 100000071680,
+ "bos_prepended": true,
+ "num_fewshot": 0,
+ "limit": null,
+ "seconds": 91.51973223686218,
+ "config": {
+  "dataset_path": "hellaswag",
+  "dataset_name": null,
+  "test_split": null,
+  "validation_split": "validation",
+  "output_type": "multiple_choice",
+  "target_delimiter": " "
+ },
+ "raw_results": {
+  "alias": "hellaswag",
+  "acc,none": 0.28809002190798644,
+  "acc_stderr,none": 0.0045194768356465395,
+  "acc_norm,none": 0.30631348336984665,
+  "acc_norm_stderr,none": 0.004600194559865312
+ }
+}
