@@ -1,4 +1,11 @@
 local_docs/
+results/
+runs/
+figures/
+tables/
+tests/
+paper_assets/
+data/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
